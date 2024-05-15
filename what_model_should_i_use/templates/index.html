@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Selection App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showHideFields() {
+            var nature = document.getElementById("nature").value;
+            var supervisedFields = document.getElementById("supervised-fields");
+            var unsupervisedFields = document.getElementById("unsupervised-fields");
+            var targetField = document.getElementById("target");
+            var goalField = document.getElementById("goal");
+
+            supervisedFields.style.display = "none";
+            unsupervisedFields.style.display = "none";
+            targetField.style.display = "none";
+            goalField.style.display = "none";
+
+            if (nature === "supervised") {
+                supervisedFields.style.display = "block";
+                targetField.style.display = "block";
+            } else if (nature === "unsupervised") {
+                unsupervisedFields.style.display = "block";
+                goalField.style.display = "block";
+            }
+        }
+
+        window.onload = function() {
+            showHideFields();
+        }
+    </script>
+</head>
+<body>
+    <h1>Machine Learning Model Selector</h1>
+    <form method="post">
+        <label for="nature">Nature of the Problem:</label>
+        <select id="nature" name="nature" onchange="showHideFields()">
+            <option value="supervised">Supervised</option>
+            <option value="unsupervised">Unsupervised</option>
+            <option value="semi-supervised">Semi-supervised</option>
+            <option value="reinforcement">Reinforcement</option>
+        </select>
+        <br>
+        <div id="supervised-fields">
+            <label for="target">Target Variable Type (for supervised):</label>
+            <select id="target" name="target">
+                <option value="categorical">Categorical</option>
+                <option value="continuous">Continuous</option>
+            </select>
+            <br>
+        </div>
+        <div id="unsupervised-fields">
+            <label for="goal">Goal (for unsupervised):</label>
+            <select id="goal" name="goal">
+                <option value="clustering">Clustering</option>
+                <option value="dimensionality_reduction">Dimensionality Reduction</option>
+            </select>
+            <br>
+        </div>
+        <label for="dataset_size">Dataset Size:</label>
+        <select id="dataset_size" name="dataset_size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <br>
+        <label for="interpretability">Need for Model Interpretability:</label>
+        <select id="interpretability" name="interpretability">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <form method="get">
+        <input type="submit" value="Restart">
+    </form>
+    {% if models %}
+        <h2>Recommended Models:</h2>
+        <ul>
+            {% for model in models %}
+                <li>{{ model }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
