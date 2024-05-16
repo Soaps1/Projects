@@ -15,6 +15,14 @@
     <main>
         <section>
             <h2>Discover Events and Tasks Tailored to Your Life Stage</h2>
+            <p>Choose your life stage:</p>
+            <button onclick="location.href='/young-teen'">Young Teen</button>
+            <button onclick="location.href='/young-adult'">Young Adult</button>
+            <button onclick="location.href='/young-professional'">Young Professional</button>
+            <button onclick="location.href='/adult'">Adult</button>
+        </section>
+        <section>
+            <h2>Get Personalized Recommendations</h2>
             <p>Enter your age and credit card information to get personalized recommendations for $2:</p>
             <form action="/create-charge" method="post" id="payment-form">
                 <input type="number" name="age" min="0" max="120" required>
@@ -25,7 +33,7 @@
             </form>
         </section>
         <script>
-            var stripe = Stripe('your-publishable-key'); // Replace with your publishable key
+            var stripe = Stripe('{{ key }}'); // Replace with your publishable key
             var elements = stripe.elements();
             var card = elements.create('card');
             card.mount('#card-element');
