@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiddity - Young Professional</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Young Professional Journey</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Checklist to Become an Upstanding Citizen</h2>
+            <p>Check off the items you've completed and upload documents or get solutions as needed. Earn 10 life points for each completed task.</p>
+            <form id="professional-form">
+                <label>
+                    <input type="checkbox" name="task" value="Insurance"> Have Insurance
+                    <button type="button">Upload Documents</button>
+                    <button type="button">Get Solution</button>
+                </label><br>
+                <label>
+                    <input type="checkbox" name="task" value="Will"> Have a Will
+                    <button type="button">Upload Documents</button>
+                    <button type="button">Get Solution</button>
+                </label><br>
+                <label>
+                    <input type="checkbox" name="task" value="Bank Account"> Have a Bank Account
+                    <button type="button">Upload Documents</button>
+                    <button type="button">Get Solution</button>
+                </label><br>
+                <label>
+                    <input type="checkbox" name="task" value="Savings"> Have Savings
+                    <button type="button">Upload Documents</button>
+                    <button type="button">Get Solution</button>
+                </label><br>
+                <label>
+                    <input type="checkbox" name="task" value="Job"> Have a Stable Job
+                    <button type="button">Upload Documents</button>
+                    <button type="button">Get Solution</button>
+                </label><br>
+                <!-- Add more tasks as needed -->
+            </form>
+            <h3>Life Points: <span id="life-points">0</span></h3>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Quiddity. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[name="task"]');
+        let lifePoints = 0;
+        const lifePointsDisplay = document.getElementById('life-points');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    lifePoints += 10;
+                } else {
+                    lifePoints -= 10;
+                }
+                lifePointsDisplay.textContent = lifePoints;
+            });
+        });
+    </script>
+</body>
+</html>
