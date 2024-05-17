@@ -18,6 +18,10 @@ def index():
 def young_teen():
     return render_template('young_teen.html')
 
+@app.route('/young-professional')
+def young_professional():
+    return render_template('young_professional.html')
+
 @app.route('/create-charge', methods=['POST'])
 def create_charge():
     try:
