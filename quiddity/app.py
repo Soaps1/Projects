@@ -8,7 +8,7 @@ stripe_keys = {
     'secret_key': 'your-secret-key',
     'publishable_key': 'your-publishable-key'
 }
-stripe.api_key = stripe_keys['secret_key']
+stripe.api_key = stripe_keys['placeholder_secret_key']
 
 @app.route('/')
 def index():
