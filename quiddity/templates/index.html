@@ -33,7 +33,7 @@
             </form>
         </section>
         <script>
-            var stripe = Stripe('{{ key }}'); // Replace with your publishable key
+            var stripe = Stripe('{{ key }}'); // Replace with Stripe publishable key once you've made the account
             var elements = stripe.elements();
             var card = elements.create('card');
             card.mount('#card-element');
