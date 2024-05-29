@@ -49,6 +49,21 @@ countries = [
     {"name": "Lithuania", "lat": 55.1694, "lng": 23.8813},
     {"name": "Latvia", "lat": 56.8796, "lng": 24.6032},
     {"name": "Estonia", "lat": 58.5953, "lng": 25.0136},
+    {"name": "New Zealand", "lat": -40.9006, "lng": 174.8860},
+    {"name": "Chile", "lat": -35.6751, "lng": -71.5430},
+    {"name": "Peru", "lat": -9.1900, "lng": -75.0152},
+    {"name": "Egypt", "lat": 26.8206, "lng": 30.8025},
+    {"name": "Nigeria", "lat": 9.0820, "lng": 8.6753},
+    {"name": "Kenya", "lat": -1.2921, "lng": 36.8219},
+    {"name": "Ethiopia", "lat": 9.1450, "lng": 40.4897},
+    {"name": "Vietnam", "lat": 14.0583, "lng": 108.2772},
+    {"name": "Thailand", "lat": 15.8700, "lng": 100.9925},
+    {"name": "Malaysia", "lat": 4.2105, "lng": 101.9758},
+    {"name": "Singapore", "lat": 1.3521, "lng": 103.8198},
+    {"name": "Philippines", "lat": 12.8797, "lng": 121.7740},
+    {"name": "Pakistan", "lat": 30.3753, "lng": 69.3451},
+    {"name": "Bangladesh", "lat": 23.6850, "lng": 90.3563},
+    {"name": "Nepal", "lat": 28.3949, "lng": 84.1240},
 ]
 
 @app.route('/')
