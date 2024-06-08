@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Capital (Easy Mode)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>What's the capital of {{ country }}?</h1>
+    <form action="/game" method="post">
+        {% for option in options %}
+        <button name="answer" value="{{ option }}">{{ option }}</button>
+        {% endfor %}
+    </form>
+    <p>Score: {{ session['score'] }}</p>
+    <p>Lives: {{ session['lives'] }}</p>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+</body>
+</html>
+

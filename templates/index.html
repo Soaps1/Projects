@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capital Guesser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Capital Guesser!</h1>
+    <p>Select a mode to start the game:</p>
+    <form action="/select_mode" method="post">
+        <button name="mode" value="easy">Easy Mode</button>
+        <button name="mode" value="hard">Hard Mode</button>
+    </form>
+</body>
+</html>
